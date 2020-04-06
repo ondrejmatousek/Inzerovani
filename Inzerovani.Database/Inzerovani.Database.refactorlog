@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="fe3c6bc8-9a39-4995-95eb-f0fc3a954426" ChangeDateTime="03/25/2020 09:11:55">
+    <Property Name="ElementName" Value="[dbo].[Inzerat].[Jmeno]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Inzerat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NazevInzeratu" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="74f5c304-a6fe-40bc-8801-12cb5878066e" ChangeDateTime="03/26/2020 13:27:56">
+    <Property Name="ElementName" Value="[dbo].[Inzerat].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Inzerat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdInzerat" />
+  </Operation>
+</Operations>

@@ -1,0 +1,80 @@
+﻿
+@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<div class="container body-content">
+    <div class="row">
+        <div class="col-sm-12  text-center">
+            <h1>Vložte inzerát zdarma</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12  text-center">
+            @using (Html.BeginForm("Edit", "Inzerat", FormMethod.Post))
+            {
+                <button type="submit" class="btn btn-warning btn-lg btn-block mx-auto" name="submit" value="New" style="min-width:100px; max-width:40rem; height:70px"><i class="fa fa-plus"></i> Vložit nový inzerát</button>
+
+            }
+        </div>
+    </div>
+    <hr />
+
+    <div class="row mt-5 w-100">
+
+        <div class="col-6 col-sm text-center">
+
+            <a href="#"><img src="~/pictures/001-car.png"></a>
+            Auto-moto
+        </div>
+        <div class="col-6 col-sm text-center">
+            <a href="#"><img src="~/pictures/002-house.png"></a>
+            Nemovitosti
+
+        </div>
+        <div class="col-6 col-sm text-center">
+            <a href="#"><img src="~/pictures/003-free.png"></a>
+            Zdarma
+
+        </div>
+        <div class="col-6 col-sm text-center">
+            <a href="#"><img src="~/pictures/005-keyboard.png"></a>
+            Elektronika
+
+        </div>
+        <div class="col-6 col-sm text-center">
+
+            <a href="#"><img src="~/pictures/006-gym.png"></a>
+            Sport
+        </div>
+
+        <div class="col-6 col-sm text-center">
+
+            <a href="#"><img src="~/pictures/007-sofa.png"></a>
+            Domácnost, hobby
+        </div>
+        <div class="col-6 col-sm text-center">
+            <a href="#"><img src="~/pictures/008-tshirt.png"></a>
+            Móda, oblečení
+
+        </div>
+        <div class="col-6 col-sm text-center">
+            <a href="#"><img src="~/pictures/009-bear.png"></a>
+            Děti
+
+        </div>
+        <div class="col-6 col-sm text-center">
+            <a href="#"><img src="~/pictures/012-books.png"></a>
+            Knihy, audio
+
+        </div>
+        <div class="col-6 col-sm text-center">
+            <a href="#"><img src="~/pictures/010-order.png"></a>
+            Ostatní
+
+        </div>
+
+    </div>
+</div>
+

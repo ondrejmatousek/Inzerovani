@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Inzerování</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f84fadafd5.js" crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top shadow p-1 mb-4">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapse_target">
+            <div class="container-fluid">
+
+                <div class="col-2 col-md-2 col-lg mr-5">
+
+                    <a href="#">
+                        <img src="~/pictures/Logo686kb.png" height="35">
+                    </a>
+
+                </div>
+                <div class="col-12 col-md-4 col-lg col-xl-4 navbarInput text-center">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Hledej ve všech kategoriích" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-warning"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2 col-lg my-2 text-center">
+                    <button class="btn btn-danger"><i class="fas fa-heart fa-1x pr-3"></i><i>Oblíbené</i></button>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 col-xl-3 text-center">
+                    <button class="btn btn-primary mr-sm-2" type="submit">Přihlásit se</button>
+                    <button class="btn btn-success mr-sm-2" type="submit">Registrovat se</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+
+
+
+
+    <footer>
+        <div class="fixed-bottom bg-light text-dark border">
+
+            <div class="row p-2">
+
+                <div class="col-md-3 col-sm-6 col-xs-12 text-center align-middle">
+                    <p>&copy; @DateTime.Now.Year - Inzerování</p>
+                </div>
+                <div class="col"></div>
+                <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                    <a href="#" class="text-dark p-2 text-decoration-none">OBCHODNÍ PODMÍNKY</a>
+                    <a href="#" class="text-dark p-2 text-decoration-none">KONTAKT</a>
+                    <a href="#" class="text-dark p-2 text-decoration-none">FAQ</a>
+                </div>
+                <div class="col"></div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12 text-center text-dark ">
+                    <a href="#" class="text-primary p-1"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" class="text-warning p-1"><i class="fa fa-envelope fa-2x"></i></a>
+                    <a href="#" class="text-primary p-1"><i class="fab fa-facebook-messenger fa-2x"></i></a>
+                    <a href="#" class="text-success p-1"><i class="fab fa-whatsapp-square fa-2x"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+    @RenderSection("scripts", required: false)
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

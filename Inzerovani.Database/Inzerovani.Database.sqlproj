@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="DB\Tables\Inzerat.sql" />
+    <Build Include="DB\Tables\Kategorie.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Inzerovani.Database.refactorlog" />

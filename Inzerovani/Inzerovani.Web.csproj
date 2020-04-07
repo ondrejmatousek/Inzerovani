@@ -175,10 +175,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CompositionRootWeb.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InzeratController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\IMapperWeb.cs" />
+    <Compile Include="Mappers\Implementace\MapperWeb.cs" />
+    <Compile Include="Models\Inzerat\InzeratViewModel.cs" />
+    <Compile Include="Models\Inzerat\TabulkaInzeratViewModel.cs" />
+    <Compile Include="Models\KategorieViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -321,10 +328,10 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Inzerat\Index.cshtml" />
     <Content Include="Views\Inzerat\Edit.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -338,6 +345,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Inzerovani.CompositionRoot\Inzerovani.CompositionRoot.csproj">
+      <Project>{bc568252-f393-4b9e-a030-8cbec754ffbc}</Project>
+      <Name>Inzerovani.CompositionRoot</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Inzerovani.DomainModel\Inzerovani.DomainModel.csproj">
       <Project>{074c9f28-9e84-4423-b49e-b5a5f704a390}</Project>
       <Name>Inzerovani.DomainModel</Name>

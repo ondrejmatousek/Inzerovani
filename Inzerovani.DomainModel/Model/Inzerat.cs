@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inzerovani.DomainModel.Model
 {
@@ -12,6 +9,7 @@ namespace Inzerovani.DomainModel.Model
         public int IdInzerat { get; set; }
         public string NazevInzeratu { get; set; }
         public int CisloInzeratu { get; set; }
+        public Kategorie Kategorie { get; set; }
         public DateTime DatumVytvoreni { get; set; }
 
         public override bool Equals(object obj)
@@ -20,15 +18,17 @@ namespace Inzerovani.DomainModel.Model
                    IdInzerat == inzerat.IdInzerat &&
                    NazevInzeratu == inzerat.NazevInzeratu &&
                    CisloInzeratu == inzerat.CisloInzeratu &&
+                   EqualityComparer<Kategorie>.Default.Equals(Kategorie, inzerat.Kategorie) &&
                    DatumVytvoreni == inzerat.DatumVytvoreni;
         }
 
         public override int GetHashCode()
         {
-            int hashCode = 757339360;
+            int hashCode = 666039813;
             hashCode = hashCode * -1521134295 + IdInzerat.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(NazevInzeratu);
             hashCode = hashCode * -1521134295 + CisloInzeratu.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<Kategorie>.Default.GetHashCode(Kategorie);
             hashCode = hashCode * -1521134295 + DatumVytvoreni.GetHashCode();
             return hashCode;
         }

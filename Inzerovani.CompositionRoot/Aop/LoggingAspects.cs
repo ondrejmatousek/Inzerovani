@@ -10,7 +10,6 @@ namespace Inzerovani.CompositionRoot.Aop
 {
     public class LoggingAspects : IInterceptor
     {
-        [Obsolete]
         public void Intercept(IInvocation invocation)
         {
             try
@@ -18,35 +17,13 @@ namespace Inzerovani.CompositionRoot.Aop
                 invocation.Proceed();
             }
 
-            //catch (KisException)
-            //{
-            //    //pouze přeposíláme výš, zpracuje až někdo, kdo reprezentuje data (GUI,WS)
-            //    throw;
-            //}
-            //catch (DBConcurrencyException exception)
-            //{
-            //    throw exception;
-            //}
-            //catch (SqlException e)
-            //{
-            //    switch (e.Number)
-            //    {
-            //        case 2627:
-            //            throw new UniqueEvidencniCisloPesException(e.Message);
-            //        case 547:
-            //            throw new ExistujeVzdalenyKlicException("Položka je součásti jiného záznamu");
-
-            //        default:
-            //            throw e;
-            //    }
-            //}
-            catch (Exception exception)
+            
+            catch (Exception)
             {
-                //jedine misto, kde se překlápí Exception do KontrolaException
-                //ZalogujVyjimku(invocation, exception);
-                //throw new KisException("Došlo k chybě");
+                
+                
+                throw new Exception("Došlo k chybě");
             }
-
 
         }
 

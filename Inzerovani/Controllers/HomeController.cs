@@ -3,6 +3,7 @@ using Inzerovani.Mappers;
 using Inzerovani.Models;
 using Inzerovani.Models.Inzerat;
 using Inzerovani.ServiceLayer;
+using Inzerovani.ServiceLayer.Implementace;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,27 +12,25 @@ using System.Web.Mvc;
 
 namespace Inzerovani.Controllers
 {
-    public class InzeratController : Controller
+    public class HomeController : Controller
     {
         private readonly IInzeratService inzeratService;
         private readonly IMapperWeb autoMapper;
-        public InzeratController(IInzeratService inzeratService, IMapperWeb autoMapper)
+        public HomeController(IInzeratService inzeratService, IMapperWeb autoMapper)
         {
             this.inzeratService = inzeratService;
             this.autoMapper = autoMapper;
         }
-        // GET: Inzerat
+        
+
+        // GET: Home
         public ActionResult Index()
         {
-            return View();
+            TabulkaInzeratViewModel model = VytvorModelSeSeznamy();
+            return View("Index", model);
         }
 
-        public ActionResult Edit()
-        {
-            return View();
-        }
-
-        public TabulkaInzeratViewModel TabulkaInzeratViewModel()
+        public TabulkaInzeratViewModel VytvorModelSeSeznamy()
         {
             List<InzeratViewModel> inzeratViewSeznam = new List<InzeratViewModel>();
             List<Inzerat> inzerat = inzeratService.GetAll().OrderBy(o => o.CisloInzeratu).ToList();

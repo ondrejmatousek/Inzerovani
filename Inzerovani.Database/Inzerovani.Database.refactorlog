@@ -14,4 +14,32 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="IdInzerat" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="4a01ba31-5c39-433c-858c-6fbd797accca" ChangeDateTime="04/06/2020 13:11:36">
+    <Property Name="ElementName" Value="[dbo].[Inzerat].[Idkategorie]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Inzerat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="kategorieId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="876a6e2d-7d11-4569-acb9-810830e1155d" ChangeDateTime="04/06/2020 13:13:48">
+    <Property Name="ElementName" Value="[dbo].[Kategorie].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Kategorie]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdKategorie" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="af9bef3d-c4a4-489e-93e7-3ad3f7930ee6" ChangeDateTime="04/06/2020 13:17:32">
+    <Property Name="ElementName" Value="[dbo].[FK_Inzerat_ToKategorie(]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Inzerat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Inzerat_ToKategorie]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6e318e57-f738-4000-9e51-3681b9bbd9f0" ChangeDateTime="04/06/2020 13:21:32">
+    <Property Name="ElementName" Value="[dbo].[Inzerat].[kategorieId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Inzerat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="KategorieId" />
+  </Operation>
 </Operations>

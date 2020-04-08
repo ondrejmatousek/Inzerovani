@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +17,13 @@ namespace Inzerovani
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+
+            //konfigurace DI/IoC kontejneru
+            ConnectionStringSettings connString = ConfigurationManager.ConnectionStrings["ConnectionString"];
+
+            var compositionRoot = new CompositionRootWeb(connString);
+            compositionRoot.Compose();
         }
     }
 }

@@ -2,6 +2,7 @@
 using DryIoc.Mvc;
 using Inzerovani.Mappers;
 using Inzerovani.Mappers.Implementace;
+using compos = Inzerovani.CompositionRoot;
 using System;
 using System.Configuration;
 
@@ -9,6 +10,7 @@ namespace Inzerovani
 {
     public class CompositionRootWeb
     {
+        
         private readonly ConnectionStringSettings connString;
         public CompositionRootWeb(ConnectionStringSettings connString)
         {
@@ -17,17 +19,16 @@ namespace Inzerovani
 
         public void Compose()
         {
-            var compositionRoot = new Inzerovani.CompositionRoot.CompositionRoot();
-            compositionRoot.Compose();
-            var IocContainer = compositionRoot.IocContainer;
 
+            compos.CompositionRoot compositionRoot = new compos.CompositionRoot();
+            compositionRoot.Compose();
+
+
+            var IocContainer = compositionRoot.IocContainer;
             IocContainer = IocContainer.WithMvc();
             IocContainer.Register<IMapperWeb, MapperWeb>();
 
             IocContainer.UseInstance(connString);
-
-
-
         }
     }
 }

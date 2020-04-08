@@ -9,7 +9,7 @@ namespace Inzerovani.CompositionRoot
     public class CompositionRoot
     {
         public IContainer IocContainer;
-        public Container Compose()
+        public void Compose()
         {
             var IocContainer = new Container();
 
@@ -23,7 +23,7 @@ namespace Inzerovani.CompositionRoot
             
 
             DalInitializer.Init();
-            return IocContainer;
+            
         }
     }
 }

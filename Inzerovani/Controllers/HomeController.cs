@@ -21,7 +21,7 @@ namespace Inzerovani.Controllers
             this.inzeratService = inzeratService;
             this.autoMapper = autoMapper;
         }
-        
+       
 
         // GET: Home
         public ActionResult Index()

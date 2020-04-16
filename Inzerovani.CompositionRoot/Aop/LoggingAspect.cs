@@ -1,15 +1,11 @@
 ﻿using Castle.DynamicProxy;
-using NLog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inzerovani.CompositionRoot.Aop
 {
-    public class LoggingAspects : IInterceptor
+    public class LoggingAspect : IInterceptor
     {
+        [Obsolete]
         public void Intercept(IInvocation invocation)
         {
             try

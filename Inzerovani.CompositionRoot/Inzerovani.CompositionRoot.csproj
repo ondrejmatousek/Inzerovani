@@ -58,7 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aop\LoggingAspects.cs" />
+    <Compile Include="Aop\DryIocInterception.cs" />
+    <Compile Include="Aop\LoggingAspect.cs" />
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

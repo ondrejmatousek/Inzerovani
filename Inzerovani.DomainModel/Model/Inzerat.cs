@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 
 namespace Inzerovani.DomainModel.Model
@@ -6,6 +7,7 @@ namespace Inzerovani.DomainModel.Model
     [Serializable]
     public class Inzerat
     {
+        [Key]
         public int IdInzerat { get; set; }
         public string NazevInzeratu { get; set; }
         public int CisloInzeratu { get; set; }

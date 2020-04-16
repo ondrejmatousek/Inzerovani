@@ -1,4 +1,5 @@
-﻿using DataAccessLayer;
+﻿using CompositionRoot.Aop;
+using DataAccessLayer;
 using DryIoc;
 using Inzerovani.CompositionRoot.Aop;
 using Inzerovani.ServiceLayer;
@@ -11,7 +12,7 @@ namespace Inzerovani.CompositionRoot
         public IContainer IocContainer;
         public void Compose()
         {
-            var IocContainer = new Container();
+            IocContainer = new Container();
 
 
             //DAO VRSTVA
@@ -20,7 +21,13 @@ namespace Inzerovani.CompositionRoot
 
             //Servisní Vrstva
             IocContainer.Register<IInzeratService, InzeratService>();
-            
+
+
+            //logování výjimek
+            IocContainer.Register<LoggingAspect>();
+
+            //zaregistrovani vsech sluzeb, ktere maji mit intercptor spolu s patricnym interceptorem
+            IocContainer.Intercept<IInzeratService, LoggingAspect>();
 
             DalInitializer.Init();
             

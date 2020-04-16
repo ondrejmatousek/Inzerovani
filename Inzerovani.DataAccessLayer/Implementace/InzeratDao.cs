@@ -19,12 +19,16 @@ namespace DataAccessLayer
             this.connectionStringSettings = connectionStringSettings;
         }
 
+        string queryGetAll = "SELECT Inzerat.[IdInzerat], Inzerat.[NazevInzeratu], Inzerat.[CisloInzeratu], Inzerat.[DatumVytvoreni], Inzerat.[KategorieId], Kategorie.[IdKategorie], Kategorie.[Nazev], Kategorie.[ParentId]" +
+                            " FROM Inzerat" +
+                            " INNER JOIN Kategorie" +
+                            " ON Inzerat.[KategorieId] = Kategorie.[IdKategorie]";
         public List<Inzerat> GetAll()
         {
             List<Inzerat> result = new List<Inzerat>();
             using(DbConnection conn = new SqlConnection(connectionStringSettings.ConnectionString))
             {
-                result = conn.GetAll<Inzerat>().ToList();
+                result = conn.Query<Inzerat>(queryGetAll).ToList();
             }
             return result;
         }

@@ -16,7 +16,10 @@ namespace Inzerovani.Mappers.Implementace
                 .ForMember(dest => dest.KategorieId, opt => opt.MapFrom(scr => scr.Kategorie.IdKategorie));
 
                 cfg.CreateMap<InzeratViewModel, Inzerat>()
-                .ForMember(dest => dest.Kategorie, opt => opt.MapFrom(scr => new Kategorie() { IdKategorie = scr.KategorieId }));
+                .ForMember(dest => dest.Kategorie, opt => opt.MapFrom(s => new Kategorie() { IdKategorie = s.KategorieId }));
+
+                cfg.CreateMap<Kategorie, KategorieViewModel>();
+                cfg.CreateMap<KategorieViewModel, Kategorie>();
             });
             this.autoMapper = config.CreateMapper();
 
@@ -39,9 +42,9 @@ namespace Inzerovani.Mappers.Implementace
             return inzerat;
         }
 
-        public List<InzeratViewModel> Map(List<Inzerat> inzerat)
+        public List<InzeratViewModel> Map(List<Inzerat> inzeratList)
         {
-            List<InzeratViewModel> inzeratViewModel = autoMapper.Map<List<Inzerat>, List<InzeratViewModel>>(inzerat);
+            List<InzeratViewModel> inzeratViewModel = autoMapper.Map<List<Inzerat>, List<InzeratViewModel>>(inzeratList);
             return inzeratViewModel;
         }
     }

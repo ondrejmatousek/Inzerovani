@@ -3,11 +3,8 @@ using Inzerovani.Mappers;
 using Inzerovani.Models;
 using Inzerovani.Models.Inzerat;
 using Inzerovani.ServiceLayer;
-using Inzerovani.ServiceLayer.Implementace;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Inzerovani.Controllers
@@ -21,7 +18,7 @@ namespace Inzerovani.Controllers
             this.inzeratService = inzeratService;
             this.autoMapper = autoMapper;
         }
-       
+
 
         // GET: Home
         public ActionResult Index()

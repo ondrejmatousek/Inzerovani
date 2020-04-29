@@ -1,12 +1,5 @@
-﻿using Inzerovani.DomainModel.Model;
-using Inzerovani.Mappers;
-using Inzerovani.Models;
-using Inzerovani.Models.Inzerat;
+﻿using Inzerovani.Mappers;
 using Inzerovani.ServiceLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Inzerovani.Controllers
@@ -31,13 +24,13 @@ namespace Inzerovani.Controllers
             return View();
         }
 
-        public TabulkaInzeratViewModel TabulkaInzeratViewModel()
-        {
-            List<InzeratViewModel> inzeratViewSeznam = new List<InzeratViewModel>();
-            List<Inzerat> inzerat = inzeratService.GetAll().OrderBy(o => o.CisloInzeratu).ToList();
+        //public TabulkaInzeratViewModel TabulkaInzeratViewModel()
+        //{
+        //    List<InzeratViewModel> inzeratViewSeznam = new List<InzeratViewModel>();
+        //    List<Inzerat> inzerat = inzeratService.GetAll().OrderBy(o => o.CisloInzeratu).ToList();
 
-            inzeratViewSeznam = autoMapper.Map(inzerat);
-            return new TabulkaInzeratViewModel(inzeratViewSeznam);
-        }
+        //    inzeratViewSeznam = autoMapper.Map(inzerat);
+        //    return new TabulkaInzeratViewModel(inzeratViewSeznam);
+        //}
     }
 }

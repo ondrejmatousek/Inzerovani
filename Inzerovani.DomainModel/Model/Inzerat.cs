@@ -7,7 +7,7 @@ namespace Inzerovani.DomainModel.Model
     [Serializable]
     public class Inzerat
     {
-        [Key]
+        [Dapper.Contrib.Extensions.Key]
         public int IdInzerat { get; set; }
         [StringLength(255)]
         public string NazevInzeratu { get; set; }

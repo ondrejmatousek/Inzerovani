@@ -112,7 +112,7 @@
                             <tr>
                                 <th scope="col">@Html.DisplayNameFor(x => x.inzeratViewModel.CisloInzeratu)</th>
                                 <th scope="col">@Html.DisplayNameFor(x => x.inzeratViewModel.NazevInzeratu)</th>
-                                <th scope="col"></th>
+                                <th scope="col">@Html.DisplayNameFor(x => x.inzeratViewModel.Kategorie.Nazev)</th>
                             </tr>
                         </thead>
 
@@ -123,6 +123,7 @@
                                 <tr>
                                     <td>@Html.DisplayFor(modelItem => i.CisloInzeratu)</td>
                                     <td>@Html.DisplayFor(modelItem => i.NazevInzeratu)</td>
+                                    <td>@Html.DisplayFor(modelItem => i.Kategorie.Nazev)</td>
                                     <td>
                                         @using (Html.BeginForm("Edit", "Inzerat", FormMethod.Post))
                                         {

@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Dapper.Contrib.Extensions;
 using Inzerovani.DomainModel.Model;
 using System;
 using System.Collections.Generic;
@@ -26,7 +25,7 @@ namespace DataAccessLayer
         public List<Inzerat> GetAll()
         {
             List<Inzerat> result = new List<Inzerat>();
-            using(DbConnection conn = new SqlConnection(connectionStringSettings.ConnectionString))
+            using (DbConnection conn = new SqlConnection(connectionStringSettings.ConnectionString))
             {
                 result = conn.Query<Inzerat>(queryGetAll).ToList();
             }
@@ -40,7 +39,7 @@ namespace DataAccessLayer
                            "FROM Inzerat " +
                            "WHERE Inzerat.IdInzerat = @IdInzerat";
 
-            using(DbConnection conn = new SqlConnection(connectionStringSettings.ConnectionString))
+            using (DbConnection conn = new SqlConnection(connectionStringSettings.ConnectionString))
             {
                 inzerat = conn.Query<Inzerat>(query, new { @IdInzerat = IdInzerat }).FirstOrDefault();
             }
@@ -52,8 +51,8 @@ namespace DataAccessLayer
             string query = "INSERT INTO Inzerat (IdInzerat, NazevInzeratu, CisloInzeratu, DatumVytvoreni)" +
                            "VALUES (@IdInzerat, @NazevInzeratu, @CisloInzeratu, @DatumVytvoreni)" +
                            "SELECT IdInzerat FROM Inzerat WHERE Inzerat.IdInzerat = Scope_Identity()";
-            
-            using(DbConnection conn = new SqlConnection(connectionStringSettings.ConnectionString))
+
+            using (DbConnection conn = new SqlConnection(connectionStringSettings.ConnectionString))
             {
                 insertee.DatumVytvoreni = DateTime.Now;
                 Inzerat inzeratZDB = conn.Query<Inzerat>(query, new { insertee.NazevInzeratu, insertee.CisloInzeratu, insertee.DatumVytvoreni }).FirstOrDefault();
@@ -68,7 +67,7 @@ namespace DataAccessLayer
 
             using (DbConnection conn = new SqlConnection(connectionStringSettings.ConnectionString))
             {
-              
+
                 Inzerat inzeratZDB = conn.Query<Inzerat>(query, new { insertee.NazevInzeratu, insertee.CisloInzeratu, insertee.DatumVytvoreni }).FirstOrDefault();
             }
         }

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Dapper.Mapper;
 using Inzerovani.DomainModel.Model;
 using System;
 using System.Collections.Generic;
@@ -20,14 +21,13 @@ namespace DataAccessLayer
 
         string queryGetAll = "SELECT Inzerat.[IdInzerat], Inzerat.[NazevInzeratu], Inzerat.[CisloInzeratu], Inzerat.[DatumVytvoreni], Inzerat.[KategorieId], Kategorie.[IdKategorie], Kategorie.[Nazev], Kategorie.[ParentId]" +
                             " FROM Inzerat" +
-                            " INNER JOIN Kategorie" +
-                            " ON Inzerat.[KategorieId] = Kategorie.[IdKategorie]";
+                            " INNER JOIN Kategorie ON Kategorie.[IdKategorie] = Inzerat.[KategorieId]";
         public List<Inzerat> GetAll()
         {
             List<Inzerat> result = new List<Inzerat>();
             using (DbConnection conn = new SqlConnection(connectionStringSettings.ConnectionString))
             {
-                result = conn.Query<Inzerat>(queryGetAll).ToList();
+                result = conn.Query<Inzerat, Kategorie>(queryGetAll, splitOn: "IdInzerat, IdKategorie").ToList();
             }
             return result;
         }

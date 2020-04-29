@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Inzerovani.DomainModel.Model
 {
+    [Dapper.Contrib.Extensions.Table("Kategorie")]
     [Serializable]
     public class Kategorie
     {
+        [Dapper.Contrib.Extensions.Key]
         public int IdKategorie { get; set; }
+        [StringLength(255)]
         public string Nazev { get; set; }
         public string ParentId { get; set; }
 

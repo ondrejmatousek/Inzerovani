@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
 using Inzerovani.DomainModel.Model;
 using Inzerovani.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Inzerovani.Mappers.Implementace
 {

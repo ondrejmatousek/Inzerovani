@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Inzerovani.DomainModel.Model
 {
+    [Dapper.Contrib.Extensions.Table("Inzerat")]
     [Serializable]
     public class Inzerat
     {

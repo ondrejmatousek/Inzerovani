@@ -1,10 +1,10 @@
 ﻿using AutoFixture;
-using System.Configuration;
 using DryIoc;
+using System.Configuration;
 
 namespace Inzerovani.Tests.Utils
 {
-    public class DryIocCustomization : ICustomization
+    public class DryIocCustomization
     {
         protected readonly Inzerovani.CompositionRoot.CompositionRoot compositionRoot;
 
@@ -19,7 +19,7 @@ namespace Inzerovani.Tests.Utils
         }
         public void Customize(IFixture fixture)
         {
-            fixture.Customizations.Add(new NoIdSpecimenBuilder(compositionRoot.IocContainer));
+            //fixture.Customizations.Add(new NoIdSpecimenBuilder(compositionRoot.IocContainer));
         }
     }
 }

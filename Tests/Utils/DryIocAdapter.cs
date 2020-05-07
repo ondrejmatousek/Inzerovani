@@ -1,33 +1,28 @@
 ﻿using AutoFixture.Kernel;
 using DryIoc;
-using System.Reflection;
+using System;
 
 namespace Inzerovani.Tests
 {
     //
-    // Summary:
-    //     Umožnuje AutoFixture vytáhnout požadováné instance z IoC kontejneru, pokud tam
-    //     jsou.
-    public class NoIdSpecimenBuilder : ISpecimenBuilder
+    // Summary: Umožnuje AutoFixture vytáhnout požadováné instance z IoC kontejneru, pokud tam jsou.
+    //
+    public class DryIocAdapter : ISpecimenBuilder
     {
-        public NoIdSpecimenBuilder()
+        private readonly IContainer iocContainer;
+
+        public DryIocAdapter(IContainer iocContainer)
         {
+            this.iocContainer = iocContainer;
         }
-
-        public extern NoIdSpecimenBuilder(IContainer iocContainer);
-
 
         public object Create(object request, ISpecimenContext context)
         {
-            var propertyInfo = request as PropertyInfo;
-            if (propertyInfo != null &&
-                propertyInfo.Name.Equals("Id") &&
-                propertyInfo.PropertyType == typeof(string))
-            {
-                return new OmitSpecimen();
-            }
+            Type requestedType = request as Type;
+            if (requestedType == null || !this.iocContainer.IsRegistered(requestedType))
+                return new NoSpecimen();
 
-            return new NoSpecimen();
+            return iocContainer.Resolve(requestedType);
         }
     }
 }

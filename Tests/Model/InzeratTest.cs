@@ -1,21 +1,19 @@
-﻿using AutoFixture;
-using AutoFixture.Xunit2;
-using Inzerovani.DomainModel.Model;
+﻿using Inzerovani.DomainModel.Model;
+using Inzerovani.Tests.Utils;
 using Xunit;
 
 namespace Inzerovani.Tests.Model
 {
     public class InzeratTest
     {
-      
-        [Theory, AutoData]
-       
+
+        [Theory]
+        [AutoDataDryIoc]
+
         public void EqualsTest(Inzerat inzerat)
         {
-            var fixture = new Fixture();
-            fixture.Customizations.Add(new NoIdSpecimenBuilder());
-            var inzerat2 = fixture.Create<Inzerat>();
-            Assert.Equal(inzerat, inzerat2);
+            var kopie = DeepCopier.DeepCopy(inzerat);
+            Assert.Equal(inzerat, kopie);
         }
     }
 }

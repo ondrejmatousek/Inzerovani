@@ -15,7 +15,7 @@
         <div class="col-sm-12  text-center">
             @using (Html.BeginForm("Edit", "Inzerat", FormMethod.Post))
             {
-                <button type="submit" class="btn btn-warning btn-lg btn-block mx-auto" name="submit" value="New" style="min-width:100px; max-width:40rem; height:70px"><i class="fa fa-plus"></i> Vložit nový inzerát</button>
+                <button type="submit" class="btn btn-warning btn-lg btn-block mx-auto" style="min-width:100px; max-width:40rem; height:70px"><i class="fa fa-plus"></i> Vložit nový inzerát</button>
             }
         </div>
     </div>
@@ -45,7 +45,8 @@
                 <a href="#"><img src="~/pictures/006-gym.png"></a>
                 <div>Sport</div>
             </div>
-
+        </div>
+        <div class="row w-100 mt-4">
             <div class="col-6 col-sm text-center">
 
                 <a href="#"><img src="~/pictures/007-sofa.png"></a>
@@ -74,6 +75,7 @@
         </div>
     </div>
 </div>
+
 
 @if (Model != null)
 {

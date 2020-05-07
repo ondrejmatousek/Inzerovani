@@ -24,13 +24,6 @@ namespace Inzerovani.Controllers
             return View();
         }
 
-        //public TabulkaInzeratViewModel TabulkaInzeratViewModel()
-        //{
-        //    List<InzeratViewModel> inzeratViewSeznam = new List<InzeratViewModel>();
-        //    List<Inzerat> inzerat = inzeratService.GetAll().OrderBy(o => o.CisloInzeratu).ToList();
 
-        //    inzeratViewSeznam = autoMapper.Map(inzerat);
-        //    return new TabulkaInzeratViewModel(inzeratViewSeznam);
-        //}
     }
 }

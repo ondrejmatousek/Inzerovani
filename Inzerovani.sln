@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inzerovani.Web", "Inzerovani\Inzerovani.Web.csproj", "{C8801034-7E49-4E4B-BDB4-FF6D34029E32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inzerovani.Testy", "Inzerovani.Tests\Inzerovani.Testy.csproj", "{65C9FA01-855D-4AE6-8C60-43FBD2448457}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inzerovani.ServiceLayer", "Inzerovani.ServiceLayer\Inzerovani.ServiceLayer.csproj", "{72666BA2-2B17-47A7-B2AF-768362A74D66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inzerovani.DomainModel", "Inzerovani.DomainModel\Inzerovani.DomainModel.csproj", "{074C9F28-9E84-4423-B49E-B5A5F704A390}"
@@ -29,10 +27,6 @@ Global
 		{C8801034-7E49-4E4B-BDB4-FF6D34029E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8801034-7E49-4E4B-BDB4-FF6D34029E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8801034-7E49-4E4B-BDB4-FF6D34029E32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65C9FA01-855D-4AE6-8C60-43FBD2448457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65C9FA01-855D-4AE6-8C60-43FBD2448457}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65C9FA01-855D-4AE6-8C60-43FBD2448457}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65C9FA01-855D-4AE6-8C60-43FBD2448457}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72666BA2-2B17-47A7-B2AF-768362A74D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72666BA2-2B17-47A7-B2AF-768362A74D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72666BA2-2B17-47A7-B2AF-768362A74D66}.Release|Any CPU.ActiveCfg = Release|Any CPU

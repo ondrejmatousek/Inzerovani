@@ -12,7 +12,7 @@ namespace Inzerovani.Tests
             compositionRoot.Compose();
             var IocContainer = compositionRoot.IocContainer;
 
-            //IocContainer.Register<IAllDaos, AllDaos>();
+            IocContainer.Register<IInzeratDao, InzeratDao>();
 
             ConnectionStringSettings connString = ConfigurationManager.ConnectionStrings["ConnectionStringLocal"];
             IocContainer.UseInstance(connString);

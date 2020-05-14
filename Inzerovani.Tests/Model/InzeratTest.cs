@@ -6,13 +6,13 @@ namespace Inzerovani.Tests.Model
 {
     public class InzeratTest
     {
-      
+
         [Theory]
         [AutoDataDryIoc]
         public void EqualsTest(Inzerat inzerat)
         {
-            var inzerat2 = DeepCopier.DeepCopy(inzerat);
-            Assert.Equal(inzerat, inzerat2);
+            var kopie = DeepCopier.DeepCopy(inzerat);
+            Assert.Equal(inzerat, kopie);
         }
     }
 }

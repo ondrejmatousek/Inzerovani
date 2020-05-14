@@ -9,7 +9,6 @@ namespace Inzerovani.Tests.Model
 
         [Theory]
         [AutoDataDryIoc]
-
         public void EqualsTest(Inzerat inzerat)
         {
             var kopie = DeepCopier.DeepCopy(inzerat);

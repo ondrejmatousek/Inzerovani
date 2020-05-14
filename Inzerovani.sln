@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inzerovani.DataAccessLayer"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Inzerovani.Database", "Inzerovani.Database\Inzerovani.Database.sqlproj", "{155BB523-BA86-40BF-8454-0DCEB10A3C34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{9BF4D978-67BB-4E52-9647-70F08D21530A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inzerovani.Tests", "Tests\Inzerovani.Tests.csproj", "{9BF4D978-67BB-4E52-9647-70F08D21530A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

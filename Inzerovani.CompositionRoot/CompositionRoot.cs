@@ -17,7 +17,7 @@ namespace Inzerovani.CompositionRoot
 
             //DAO VRSTVA
             IocContainer.Register<IInzeratDao, InzeratDao>();
-           
+
 
             //Servisní Vrstva
             IocContainer.Register<IInzeratService, InzeratService>();
@@ -30,7 +30,7 @@ namespace Inzerovani.CompositionRoot
             IocContainer.Intercept<IInzeratService, LoggingAspect>();
 
             DalInitializer.Init();
-            
+
         }
     }
 }

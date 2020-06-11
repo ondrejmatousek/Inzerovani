@@ -2,7 +2,9 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-
+div.col-sm.text-center div.popis {
+    font-size: 13px;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
